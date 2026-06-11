@@ -219,25 +219,31 @@ export default function Home() {
         <div className="mx-auto mt-16 grid max-w-[1130px] gap-6 lg:grid-cols-3">
           {howItWorks.map((item, index) => (
             <article
-              className={`min-h-[300px] rounded-[20px] border border-[var(--dark-line)] p-7 ${
+              className={`relative min-h-[300px] overflow-hidden rounded-[20px] border border-[var(--dark-line)] p-7 ${
                 index === 0
-                  ? "bg-[radial-gradient(circle_at_50%_76%,rgba(216,255,40,0.4),transparent_36%),#0b2024] text-[var(--paper)]"
+                  ? "bg-[#0b2024] text-[var(--paper)]"
                   : "bg-[linear-gradient(180deg,#ffffff,#f1f4ee)] text-[var(--ink)]"
               }`}
               key={item.title}
             >
+              {index === 0 ? (
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[radial-gradient(circle_at_50%_100%,rgba(216,255,40,0.28),transparent_62%)]"
+                  aria-hidden="true"
+                />
+              ) : null}
               <span
-                className={`mb-20 block font-mono text-[13px] font-black ${
+                className={`relative z-10 mb-20 block font-mono text-[13px] font-black ${
                   index === 0 ? "text-[var(--lime)]" : "text-[#6d8d12]"
                 }`}
               >
                 {item.stat}
               </span>
-              <h3 className="mb-3.5 text-[25px] font-black leading-tight">
+              <h3 className="relative z-10 mb-3.5 text-[25px] font-black leading-tight">
                 {item.title}
               </h3>
               <p
-                className={`text-[15px] leading-relaxed ${
+                className={`relative z-10 text-[15px] leading-relaxed ${
                   index === 0
                     ? "text-[rgba(247,248,242,0.72)]"
                     : "text-[var(--muted-dark)]"
