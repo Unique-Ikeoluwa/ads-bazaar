@@ -5,11 +5,11 @@ export default function CreatorSettingsPage() {
     <>
       <DashboardHeader eyebrow="Account preferences" title="Settings" />
 
-      <div className="flex flex-col items-center justify-center gap-2 border border-(--dash-border) bg-(--dash-surface) px-6 py-20 text-center">
-        <p className="text-sm font-medium text-(--dash-heading)">
+      <div className="flex flex-col items-center justify-center gap-2 border border-[var(--dash-border)] bg-[var(--dash-surface)] px-6 py-20 text-center">
+        <p className="text-sm font-medium text-[var(--dash-heading)]">
           This page is under construction.
         </p>
-        <p className="max-w-md text-sm text-(--dash-muted)">
+        <p className="max-w-md text-sm text-[var(--dash-muted)]">
           Profile settings and notification preferences coming soon.
         </p>
       </div>
